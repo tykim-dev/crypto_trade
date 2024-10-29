@@ -15,7 +15,7 @@ const BasicChartPage: React.FC = () => {
     <DefaultLayout>
       <Breadcrumb pageName="Basic Chart" />
 
-      {/* <BasicChart /> */}
+      <BasicChart />
     </DefaultLayout>
   );
 };
