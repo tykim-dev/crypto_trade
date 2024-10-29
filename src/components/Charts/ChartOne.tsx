@@ -1,9 +1,11 @@
 import { ApexOptions } from "apexcharts";
 import React from "react";
-import ReactApexChart from "react-apexcharts";
+// import ReactApexChart from "react-apexcharts";
 import DefaultSelectOption from "@/components/SelectOption/DefaultSelectOption";
+import dynamic from 'next/dynamic'
 
 const ChartOne: React.FC = () => {
+  const ReactApexChart = dynamic(() => import("react-apexcharts"), { ssr: false });
   const series = [
     {
       name: "Received Amount",
