@@ -14,6 +14,9 @@ const UserSchema: Schema = new Schema({
     type: String,
     required: true,
   },
+  apiKey: {
+    type: String,
+  },
 //   role: {
 //     type: String
 //   }
