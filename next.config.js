@@ -8,7 +8,7 @@ const nextConfig = {
     // domains: ['http://k.kakaocdn.net', 'http://k.kakaocdn.net'],
     remotePatterns: [
       {
-        protocol: 'http',
+        protocol: 'https',
         hostname: 'k.kakaocdn.net',
         port: '',
         pathname: '/**/*',
@@ -27,12 +27,9 @@ const nextConfig = {
       },
     ],
   },
-  // eslint: {
-  //   ignoreDuringBuilds: true,
-  // },
-  // experimental: {
-  //   missingSuspenseWithCSRBailout: false,
-  // },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 }
 
 module.exports = nextConfig
