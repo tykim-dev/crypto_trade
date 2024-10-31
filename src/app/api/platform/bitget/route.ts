@@ -20,18 +20,9 @@ export async function POST(request: NextRequest) {
   await connectDB();
 
   const body = await request.json();;
-console.log(body);
-  // const userInfo = await UserModel.findOne();
-
-  // // const doc = await UserModel.findOneAndUpdate({email: ''}, {apiKey: salt}, {new: true});
-
-  // // console.log(doc);
-  // // const hash = bcrypt.hashSync("q", salt);
-  // // const hash = bcrypt.hashSync(myPlaintextPassword, salt);
-
-  // const userInfo = await UserModel.findOne();
   
-  // const userApiInfo = await UserApiModel.findOne({user: userInfo._id});
+  const userInfo = await UserModel.findOne({apiKey: body.apiKey});
+  const userApiInfo = await UserApiModel.findOne({user: userInfo._id}, {apiInfos: {$elemMatch: {platform: body.platform}}})
   
-  return NextResponse.json(body)
+  return NextResponse.json(userApiInfo)
 }
