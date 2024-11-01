@@ -9,11 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/lodash": "^4.17.13",
     "apexcharts": "^3.45.2",
     "bcrypt": "^5.1.1",
     "bitget-api": "^2.0.13",
     "flatpickr": "^4.6.13",
     "jsvectormap": "^1.5.3",
+    "lodash": "^4.17.21",
     "mongoose": "^8.7.3",
     "next": "^15.0.1",
     "next-auth": "^4.24.10",
