@@ -16,4 +16,8 @@ const trade = async (apiInfo: any) => {
   });
 }
 
-export default trade;
+const trade2 = async (apiInfo: any) => {
+  return {code: '00000', msg: '테스트 입니다.'};
+}
+
+export {trade, trade2};
