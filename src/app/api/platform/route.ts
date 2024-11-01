@@ -5,7 +5,7 @@ import connectDB from '@/app/utils/database';
 import UserModel from '@/app/models/user.model';
 import UserApiModel from '@/app/models/user_api.model';
 import bcrypt from "bcrypt";
-import { trade, trade2 } from './bitget/route';
+import trade from './bitget/route';
 import { useState } from 'react';
 import { isEmpty } from 'lodash';
 
