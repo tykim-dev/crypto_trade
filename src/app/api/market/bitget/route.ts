@@ -21,17 +21,6 @@ export async function POST(request: NextRequest) {
 
   const body = await request.json();;
 console.log(body);
-  // const userInfo = await UserModel.findOne();
-
-  // // const doc = await UserModel.findOneAndUpdate({email: ''}, {apiKey: salt}, {new: true});
-
-  // // console.log(doc);
-  // // const hash = bcrypt.hashSync("q", salt);
-  // // const hash = bcrypt.hashSync(myPlaintextPassword, salt);
-
-  // const userInfo = await UserModel.findOne();
-  
-  // const userApiInfo = await UserApiModel.findOne({user: userInfo._id});
   
   return NextResponse.json(body)
 }
