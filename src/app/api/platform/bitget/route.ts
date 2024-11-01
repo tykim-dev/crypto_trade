@@ -1,28 +1,19 @@
 'use strict'
-import { headers } from 'next/headers'
-import { NextRequest, NextResponse } from "next/server"
-import connectDB from '@/app/utils/database';
-import UserModel from '@/app/models/user.model';
-import UserApiModel from '@/app/models/user_api.model';
-import bcrypt from "bcrypt";
-import { NextApiRequest } from 'next';
 
-export async function GET(request: NextRequest) {
-  await connectDB();
-  const userInfo = await UserModel.findOne();
-  
-  const userApiInfo = await UserApiModel.findOne({user: userInfo._id});
-  
-  return NextResponse.json({userInfo, userApiInfo})
+import { RestClientV2 } from "bitget-api";
+
+const trade = async (apiInfo: any) => {
+  const client = new RestClientV2({
+    apiKey: apiInfo.apiKey,
+    apiSecret: apiInfo.apiSecret,
+    apiPass: apiInfo.apiPass,
+  });
+
+  return client.getSpotAccount().then((res) => {
+    return res;
+  }).catch((error) => {
+    return error?.body;
+  });
 }
 
-export async function POST(request: NextRequest) {
-  await connectDB();
-
-  const body = await request.json();;
-  
-  const userInfo = await UserModel.findOne({apiKey: body.apiKey});
-  const userApiInfo = await UserApiModel.findOne({user: userInfo._id}, {apiInfos: {$elemMatch: {platform: body.platform}}})
-  
-  return NextResponse.json(userApiInfo)
-}
+export default trade;
