@@ -2,7 +2,7 @@
 
 import { RestClientV2 } from "bitget-api";
 
-const trade = async (apiInfo: any) => {
+const TradeBitget = async (apiInfo: any) => {
   const client = new RestClientV2({
     apiKey: apiInfo.apiKey,
     apiSecret: apiInfo.apiSecret,
@@ -16,4 +16,4 @@ const trade = async (apiInfo: any) => {
   });
 }
 
-export default trade;
+export default TradeBitget;
