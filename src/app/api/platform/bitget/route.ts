@@ -2,11 +2,17 @@
 
 import { RestClientV2 } from "bitget-api";
 
-const TradeBitget = async (apiInfo: any) => {
+type TradeBitgetProps = {
+  apiKey: string,
+  apiSecret: string,
+  apiPass: string,
+} 
+
+const TradeBitget = async ({apiKey, apiSecret, apiPass}: TradeBitgetProps) => {
   const client = new RestClientV2({
-    apiKey: apiInfo.apiKey,
-    apiSecret: apiInfo.apiSecret,
-    apiPass: apiInfo.apiPass,
+    apiKey: apiKey,
+    apiSecret: apiSecret,
+    apiPass: apiPass,
   });
 
   return client.getSpotAccount().then((res) => {
