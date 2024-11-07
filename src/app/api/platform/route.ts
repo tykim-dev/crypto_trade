@@ -4,7 +4,7 @@ import connectDB from '@/app/utils/database';
 import UserModel from '@/app/models/user.model';
 import UserApiModel from '@/app/models/user_api.model';
 import bcrypt from "bcrypt";
-import TradeBitget from './bitget/route';
+import TradeBitget from './bitget/_route';
 import { isEmpty } from 'lodash';
 
 export async function POST(request: NextRequest) {
